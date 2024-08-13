@@ -1,6 +1,17 @@
 const input = document.getElementById('inputtext');
 const buttons = document.querySelectorAll('button');
 
+function calculate(expression) {
+    console.log(expression);
+    console.log(typeof(expression));
+    try {
+        return new Function('return ' + expression)();
+    } catch (error) {
+        return 'Malformed Operation';
+    }
+}
+
+
 function operation(buttonValue) {
     if (buttonValue === 'C') {
         input.value = '';
@@ -13,16 +24,9 @@ function operation(buttonValue) {
     }
 }
 
-function calculate(expression) {
-    console.log(expression);
-    try {
-        return new Function('return' + expression)();
-    } catch (error) {
-        return 'Malformed Operaion';
-    }
-}
-
-buttons.forEach(button=> {
+buttons.forEach(button => {
     let buttonValue = button.innerText;
-    button.addEventListener('click', function(){operation(buttonValue)})
+    button.addEventListener('click', function () {
+        operation(buttonValue);
+    });
 });
