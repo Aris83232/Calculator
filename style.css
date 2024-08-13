@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    background-color: #664a2c56;
+}
+
+.calc-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 1px;
+}
+
+.calc-grid button {
+    font-family: 'DM Mono', monospace;
+    font-size: 25px;
+    background-color: #eae2b7;
+    border: none;
+    cursor: pointer;
+}
+
+textarea {
+    grid-column: span 4;
+    font-family: 'DM Mono', monospace;
+    font-size: 25px;
+    text-align: end;
+    background-color: #fcbf49;
+    padding: 15px;
+    border: none;
+}
+
+.calc-grid button:nth-child(n+18) {
+    background-color: #db3939;
+}
+
+button:hover,
+calc-grid button:nth-child(n+18):hover {
+    background-color: #003049;
+    color: white;
+    transition: 0.2s;
+}
